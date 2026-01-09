@@ -1,0 +1,988 @@
+/* General Body & Fonts */
+body {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+/* ================= Navbar ================= */
+#navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+#navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#navbar .logo-wrapper {
+    padding: 6px;
+    border: 2px solid rgba(230, 164, 53, 0.8);
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 15px rgba(230, 164, 53, 0.3);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#navbar.scrolled .logo-wrapper {
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    padding: 0;
+}
+
+#navbar .logo-img {
+    border-radius: 8px;
+    display: block;
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    position: relative;
+    padding-bottom: 6px;
+    transition: color 0.4s ease;
+}
+
+#navbar.scrolled .nav-link {
+    color: #4A2526;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 1px;
+    background-color: #E6A435;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-cta {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+#navbar.scrolled .nav-cta {
+    background-color: #E6A435;
+    color: #4A2526;
+    border-color: #E6A435;
+}
+
+.nav-cta:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #4A2526;
+}
+
+#navbar.scrolled .nav-cta:hover {
+    background-color: #d3932b;
+}
+
+/* --- Contact Dropdown Menu --- */
+.contact-dropdown {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 10px);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: 100;
+}
+
+.contact-dropdown.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 12px 16px;
+    color: #4A2526;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #FBF9F6;
+}
+
+/* ================= Hero Section ================= */
+.hero-cta-btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #E6A435;
+    color: #E6A435;
+    font-weight: bold;
+    padding: 0.9rem 2.8rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.4s ease;
+}
+
+.hero-cta-btn:hover {
+    background-color: #E6A435;
+    color: #4A2526;
+    transform: scale(1.05);
+}
+
+/* ================= Curtain Card ================= */
+.curtain-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.curtain-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(74, 37, 38, 0.12);
+}
+
+.curtain-card .img-wrapper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.curtain-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.curtain-card:hover img {
+    transform: scale(1.08);
+}
+
+.curtain-card .card-content {
+    padding: 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.curtain-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #4A2526;
+    margin-bottom: 0.75rem;
+}
+
+.curtain-card p {
+    color: #7a6a66;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+.curtain-card .cta-link {
+    color: #E6A435;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    align-self: center;
+}
+
+.curtain-card .cta-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    background-color: #E6A435;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.curtain-card:hover .cta-link::after {
+    width: 100%;
+}
+
+/* ================= Footer ================= */
+.footer-logo-wrapper {
+    display: inline-block;
+    padding: 8px;
+    border: 2px solid rgba(230, 164, 53, 0.5);
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.footer-logo-wrapper img {
+    border-radius: 10px;
+    display: block;
+}
+
+.social-icon {
+    color: #9d8c88;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #E6A435;
+    transform: scale(1.2);
+}
+
+/* ================= Lightbox (Original Styles) ================= */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(47, 26, 26, .9);
+    display: flex;
+    flex-direction: column;
+    /* الترتيب العمودي */
+    justify-content: center;
+    /* توسيط المحتوى الرئيسي عمودياً */
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity .4s ease;
+    padding: 20px 0;
+    /* إزالة الحشوة الأفقية وإبقاء العمودية */
+}
+
+
+.lightbox.show {
+    opacity: 1;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+
+    /* تعديلات الانيميشن */
+    transform: scale(1);
+    /* <-- تغيير من 0.8 إلى 1 */
+    opacity: 1;
+    /* <-- إضافة جديدة */
+    transition: opacity 0.3s ease-in-out, transform .4s cubic-bezier(.25, .8, .25, 1);
+    /* <-- تعديل */
+}
+
+
+
+.lightbox.show img {
+    transform: scale(1);
+}
+
+.lightbox .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 4rem;
+    color: #D1C7C4;
+    cursor: pointer;
+    line-height: 1;
+    transition: color .3s ease, transform .3s ease;
+}
+
+.lightbox .close-btn:hover {
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+/* ================== Icon Fixes ================== */
+.dropdown-item svg,
+.social-icon svg {
+    flex-shrink: 0;
+}
+
+/* ================= Hero Slideshow ================= */
+#hero-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+}
+
+#hero-slideshow .slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* ================= Search Input ================= */
+.search-input {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
+    padding: 8px 16px 8px 40px;
+    width: 150px;
+    transition: all 0.4s ease;
+    font-size: 0.9rem;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input:focus {
+    outline: none;
+    width: 220px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: #E6A435;
+}
+
+#navbar.scrolled .search-input {
+    background-color: #fdfdfd;
+    color: #4A2526;
+    border-color: #e2e8f0;
+}
+
+#navbar.scrolled .search-input::placeholder {
+    color: #a0aec0;
+}
+
+#navbar.scrolled .search-input:focus {
+    border-color: #E6A435;
+    box-shadow: 0 0 0 2px rgba(230, 164, 53, 0.2);
+}
+
+/* لإخفاء البطاقات التي لا تطابق البحث */
+.curtain-card.hidden-by-search {
+    display: none;
+}
+
+/* ================= Professional Lightbox Gallery ================= */
+.lightbox {
+    flex-direction: column;
+    /* لترتيب الصورة الكبيرة فوق الصور المصغرة */
+    padding: 20px;
+}
+
+.lightbox .lightbox-main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    /* تحديد عرض أقصى */
+    margin-bottom: 15px;
+}
+
+.lightbox .image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    /* الزوايا الدائرية للحاوية */
+    overflow: hidden;
+    /* <-- هذا هو السطر السحري! */
+}
+
+
+
+.lightbox .counter-display {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 10001;
+    display: none;
+    /* سيتم إظهاره عبر الجافاسكريبت */
+}
+
+.lightbox .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(10, 10, 10, 0.3);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    z-index: 10001;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    /* --- التعديل النهائي للتوسيط --- */
+    display: grid;
+    place-items: center;
+    /* -------------------------------- */
+
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+
+
+.lightbox .nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%) scale(1.1);
+    /* يكبر قليلاً عند المرور عليه */
+}
+
+.lightbox .nav-btn svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* حل مشكلة الانعكاس */
+.lightbox .prev-btn {
+    left: 20px;
+}
+
+.lightbox .next-btn {
+    right: 20px;
+}
+
+/* --- Thumbnail Styles --- */
+.thumbnail-container {
+    display: none;
+    /* سيتم إظهاره عبر الجافاسكريبت */
+
+    /* --- التعديلات الجديدة للتثبيت --- */
+    position: absolute;
+    /* جعله عنصراً مطلقاً بالنسبة للـ Lightbox */
+    bottom: 20px;
+    /* تثبيته على بعد 20 بكسل من الأسفل */
+    left: 50%;
+    /* وضعه في منتصف الشاشة أفقياً */
+    transform: translateX(-50%);
+    /* تصحيح التوسيط الأفقي */
+    /* --------------------------------- */
+
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    max-width: 90vw;
+    overflow-x: auto;
+
+    /* لمسة جمالية إضافية */
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(3px);
+}
+
+
+.thumbnail-img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.thumbnail-img:hover {
+    opacity: 1;
+}
+
+.thumbnail-img.active {
+    opacity: 1;
+    border-color: #E6A435;
+    /* لون مميز للصورة المصغرة النشطة */
+}
+
+
+/* ================= Professional Close Button ================= */
+
+/* حاوية الزر الرئيسية */
+.close-btn-pro {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    width: 50px;
+    /* حجم ثابت للحاوية */
+    height: 50px;
+    /* حجم ثابت للحاوية */
+    cursor: pointer;
+    z-index: 10002;
+    /* لضمان ظهوره فوق كل شيء */
+
+    /* إزالة الأنماط الافتراضية للزر */
+    background: transparent;
+    border: none;
+    padding: 0;
+
+    /* خاصية مهمة للتحريك */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* الخطوط التي تشكل الأيقونة */
+.close-btn-pro .icon-line {
+    position: absolute;
+    top: 50%;
+    /* توسيط الخطوط عمودياً */
+    left: 50%;
+    /* توسيط الخطوط أفقياً */
+    width: 32px;
+    /* طول الخط */
+    height: 3px;
+    /* سماكة الخط */
+    background-color: #D1C7C4;
+    border-radius: 5px;
+    /* لجعل الأطراف دائرية */
+    transition: all 0.3s ease-in-out;
+}
+
+/* تدوير الخط الأول ليصبح مائلاً ( \ ) */
+.close-btn-pro .line-1 {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* تدوير الخط الثاني ليصبح مائلاً ( / ) */
+.close-btn-pro .line-2 {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* التأثير عند مرور الماوس */
+.close-btn-pro:hover {
+    transform: rotate(90deg);
+    /* تدوير الحاوية بأكملها */
+}
+
+/* تغيير لون الخطوط عند مرور الماوس على الزر */
+.close-btn-pro:hover .icon-line {
+    background-color: #FFFFFF;
+}
+
+/* ================= Lightbox Info Bar & Inquire Button ================= */
+
+/* الشريط العلوي داخل معرض الصور */
+.info-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* يضع العداد في جهة والزر في جهة أخرى */
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+    /* تدرج شفاف جميل */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* إظهار الشريط عند مرور الماوس فوق الصورة */
+.lightbox .image-container:hover .info-bar {
+    opacity: 1;
+}
+
+/* تعديل بسيط على العداد ليعمل داخل الشريط الجديد */
+.counter-display {
+    position: static;
+    /* إزالة التموضع المطلق السابق */
+    transform: none;
+    margin-left: 10px;
+    /* تعديل الهامش */
+}
+
+/* تصميم زر الاستفسار الجديد */
+.whatsapp-inquire-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    /* لون واتساب */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    transform: translateY(-10px);
+    /* لإخفائه في البداية */
+    opacity: 0;
+}
+
+/* إظهار الزر عند ظهور الشريط */
+.image-container:hover .whatsapp-inquire-btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.whatsapp-inquire-btn:hover {
+    background-color: #1EBE57;
+    transform: scale(1.05) !important;
+    /* يكبر قليلاً عند المرور عليه */
+}
+
+/* ================= About Us Section (Corrected) ================= */
+#about-us .relative {
+    min-height: 450px;
+}
+
+#about-us h2 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+#about-us strong {
+    font-weight: 700;
+    color: #4A2526;
+}
+
+/* --- التصحيح لتأثير الـ Hover --- */
+/* عندما يتم المرور فوق الحاوية الرئيسية (group), يتم تطبيق التأثير على العنصر الابن (card-background) */
+#about-us .group:hover .card-background {
+    transform: rotate(0deg);
+}
+
+
+/* ================= Features Section ================= */
+.feature-card {
+    background-color: #FBF9F6;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid #F0EBE5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(74, 37, 38, 0.08);
+}
+
+.feature-icon {
+    margin: 0 auto 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #4A2526;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon i {
+    font-size: 2rem;
+    /* استخدام font-size للتحكم في حجم أيقونات Font Awesome */
+    color: #E6A435;
+}
+
+.feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #4A2526;
+    margin-bottom: 0.75rem;
+}
+
+.feature-description {
+    color: #7a6a66;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* ================= Live Work Gallery Section ================= */
+.horizontal-scroll-wrapper {
+    overflow-x: auto;
+    padding: 2rem 0;
+    /* لإخفاء شريط التمرير الافتراضي */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.live-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    padding: 0 2rem;
+    /* لإعطاء مساحة في البداية والنهاية */
+    width: max-content;
+    /* مهم جداً لعمل التمرير الأفقي */
+}
+
+.gallery-item {
+    position: relative;
+    flex-shrink: 0;
+    width: 300px;
+    /* عرض افتراضي */
+    height: 450px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* التراكب الذي يظهر عند المرور */
+.gallery-item::after {
+    content: '\f00e';
+    /* رمز أيقونة البحث (تكبير) من Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    color: white;
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* أحجام مختلفة للصور لإعطاء شكل متدرج */
+.gallery-item.item-wide {
+    width: 450px;
+}
+
+.gallery-item.item-tall {
+    height: 550px;
+}
+
+/* ================= Team Section ================= */
+.team-card {
+    background-color: #FFFFFF;
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(74, 37, 38, 0.09);
+    border-color: #E6A435;
+}
+
+.team-icon {
+    margin: 0 auto 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #4A2526;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.team-card:hover .team-icon {
+    background-color: #E6A435;
+}
+
+.team-icon i {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.team-card:hover .team-icon i {
+    color: #4A2526;
+}
+
+.team-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #4A2526;
+    margin-bottom: 0.75rem;
+}
+
+.team-description {
+    color: #7a6a66;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ================= About Us Modal Styles (with Animation) ================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(47, 26, 26, .8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 1rem;
+
+    /* --- Animation Properties --- */
+    opacity: 0;
+    visibility: hidden;
+    /* لإخفاء العنصر تماماً عندما لا يكون نشطاً */
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 1rem;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    /* --- Animation Properties --- */
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease;
+}
+
+/* عند تفعيل النافذة، يتم تطبيق هذه الأنماط على المحتوى */
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #888;
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background: #E6A435;
+    color: white;
+    transform: rotate(90deg);
+}
+
+.vision-mission-card {
+    background-color: #FBF9F6;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    border-left: 4px solid #E6A435;
+}
+
+.vision-mission-card .card-icon {
+    font-size: 2rem;
+    color: #4A2526;
+    margin-bottom: 1rem;
+}
+
+.vision-mission-card .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4A2526;
+    margin-bottom: 0.5rem;
+}
+
+.vision-mission-card .card-text {
+    color: #7a6a66;
+}
+
+/* ================= Developer Link in Footer ================= */
+.developer-link {
+    color: #E6A435; /* لون ذهبي مميز */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.developer-link:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+    text-underline-offset: 4px; /* لإبعاد الخط عن النص قليلاً */
+}

@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LUXE متخصصون في تصميم وتفصيل وتركيب أحدث موديلات الستائر. نقدم ستائر ويفي، رول، بلاك أوت، وزيبرا بجودة عالية وأسعار منافسة. تواصل معنا الآن."
+    />
+    <meta
+      name="keywords"
+      content="ستائر، ديكور، ستائر مودرن، ستائر رول، ستائر بلاك أوت، تفصيل ستائر، تركيب ستائر، ستائر في الرياض، محلات ستائر و ديكورLuxe"
+    />
+    <meta http-equiv="Content-Language" content="ar" />
+    <meta name="author" content="LUXE للستائر والديكور" />
+    <title>ستائر وديكورات مودرن | LUXE</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons (السطر الجديد) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Your Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-[#FBF9F6] text-[#3D322F] font-['Almarai']">
+    <!-- ================= NAVBAR  ================= -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+    >
+      <div
+        class="container mx-auto px-4 sm:px-6 flex justify-between items-center py-4"
+      >
+        <!-- الشعار -->
+        <div class="flex-1 flex justify-start">
+          <a href="#">
+            <div class="logo-wrapper">
+              <img
+                src="images/logo.png"
+                alt="شعار LUXE للستائر والديكور"
+                class="h-14 logo-img"
+              />
+            </div>
+          </a>
+        </div>
+
+        <!-- العناصر اليمنى (بحث وتواصل) -->
+        <div class="flex-1 flex justify-end items-center gap-2 sm:gap-4">
+          <!-- حاوية مرنة للروابط والبحث (تم التعديل هنا لحل مشكلة النقر) -->
+          <div class="flex-1 flex justify-end items-center gap-4 md:gap-6">
+            <!-- رابط مجموعتنا (يظهر فقط على الشاشات المتوسطة فأكبر) -->
+            <a href="#showcase" class="nav-link hidden md:block">مجموعتنا</a>
+
+            <!-- ==== حقل البحث ==== -->
+            <div class="relative">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="ابحث..."
+                class="search-input"
+              />
+              <svg
+                class="absolute top-1/2 -translate-y-1/2 left-3 w-4 h-4 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- القائمة المنسدلة للتواصل -->
+          <div class="relative" id="contact-dropdown-container">
+            <button id="contact-dropdown-button" class="nav-cta">
+              تواصل معنا
+            </button>
+            <div id="contact-dropdown-menu" class="contact-dropdown">
+              <a id="call-link" href="" class="dropdown-item">
+                <span class="ml-2">اتصال مباشر</span>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                id="whatsapp-link-dropdown"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                class="dropdown-item"
+              >
+                <span class="ml-2">واتساب</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    d="M12 2C6.5 2 2 6.2 2 11.6c0 1.9.5 3.7 1.6 5.3L2 22l5.3-1.6c1.6.9 3.4 1.4 5.3 1.4 5.5 0 10-4.2 10-9.6S17.5 2 12 2zm0 17.4c-1.7 0-3.3-.5-4.7-1.4l-.3-.2-3.1.9.9-3-.2-.3c-1-1.4-1.5-3-1.5-4.7C3.1 7.4 7.1 4 12 4s8.9 3.4 8.9 7.6-4 7.8-8.9 7.8zm4.6-5.8c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1s-.7.7-.9.8c-.2.1-.3.1-.5 0-.2-.1-.9-.3-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.2.2-.3.1-.1 0-.2 0-.4s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 2 .8 2.4.9 2.6c.1.2 1.6 2.4 3.9 3.4.5.2.9.4 1.3.5.5.1.9.1 1.3.1.4 0 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.2-.2-.4-.3z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/luxe_strar"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="dropdown-item"
+              >
+                <span class="ml-2">انستغرام</span>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.645-.07-4.85s.012-3.585.07-4.85c.148-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.tiktok.com/@luxe_sta"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="dropdown-item"
+              >
+                <span class="ml-2">تيك توك</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    d="M16.5 1c.9 2.4 2.7 4.2 5 5v4.3c-1.9-.1-3.7-.7-5-1.7v7.6c0 3.5-2.8 6.3-6.3 6.3S4 19.7 4 16.2s2.8-6.3 6.3-6.3c.4 0 .8 0 1.2.1v4.1c-.4-.2-.8-.3-1.2-.3-1.4 0-2.4 1.1-2.4 2.4s1.1 2.4 2.4 2.4 2.4-1.1 2.4-2.4V1h3.8z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.snapchat.com/add/lux_star"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="dropdown-item"
+              >
+                <span class="ml-2">سناب شات</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-6 h-6"
+                >
+                  <path
+                    d="M12 3c-2.8 0-5 2.2-5 5v2.2c0 .7-.4 1.3-1 1.6l-1.4.7c-.4.2-.6.6-.5 1 .1.4.5.7.9.7h.6c.8 0 1.4.6 1.4 1.4 0 2.6 2.2 4.7 5 4.7s5-2.1 5-4.7c0-.8.6-1.4 1.4-1.4h.6c.4 0 .8-.3.9-.7.1-.4-.1-.8-.5-1l-1.4-.7c-.6-.3-1-1-1-1.6V8c0-2.8-2.2-5-5-5z"
+                  />
+                </svg>
+              </a>
+              <a href="mailto:luxestare@gmail.com" class="dropdown-item">
+                <span class="ml-2">البريد الإلكتروني</span>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                  ></path>
+                  <path
+                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= HERO (SLIDESHOW BACKGROUND) ================= -->
+    <section
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <!-- حاوية عرض الشرائح -->
+      <div id="hero-slideshow" class="absolute inset-0 z-0">
+        <!-- سيتم إضافة الصور هنا عبر JavaScript -->
+      </div>
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div class="relative z-10 text-center text-white px-6" data-aos="fade-up">
+        <h1
+          class="text-5xl md:text-7xl font-['Playfair_Display'] font-medium mb-5 leading-tight"
+        >
+          حيث يلتقي الفن بالنسيج
+        </h1>
+        <p class="max-w-2xl mx-auto mb-10 text-lg text-gray-200 font-light">
+          نقدم لكم تصاميم تتجاوز المألوف، لتمنح مساحاتكم هوية فريدة.
+        </p>
+        <a href="#showcase" class="hero-cta-btn"> اكتشف الإبداع </a>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT US SECTION ================= -->
+    <section id="about-us" class="py-28 bg-[#FBF9F6] overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- الجزء الخاص بالصورة -->
+          <div
+            data-aos="fade-left"
+            class="relative h-[500px] order-1 lg:order-2 group"
+          >
+            <div
+              class="card-background absolute inset-0 bg-[#4A2526] rounded-2xl transform -rotate-3 transition-transform duration-500"
+            ></div>
+            <div class="absolute inset-0 w-full h-full p-4">
+              <img
+                src="images/photo (2).jpg"
+                alt="تصميم ستارة فاخرة"
+                class="w-full h-full object-cover rounded-xl shadow-2xl"
+              />
+            </div>
+          </div>
+
+          <!-- الجزء الخاص بالنص -->
+          <!-- الجزء الخاص بالنص (تم التعديل) -->
+          <div
+            data-aos="fade-right"
+            class="text-center lg:text-right order-2 lg:order-1"
+          >
+            <h3
+              class="inline-block text-lg font-bold text-[#E6A435] bg-[#4A2526] px-4 py-2 rounded-md mb-6"
+            >
+              #LUXE
+            </h3>
+            <h2
+              class="text-4xl md:text-5xl font-['Playfair_Display'] text-[#4A2526] mb-6 leading-snug"
+            >
+              حيث تلتقي الحِرفية بالفخامة
+            </h2>
+            <p
+              class="text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8"
+            >
+              تقدم لك مؤسسة <strong>LUXE</strong> أجمل التصاميم وأروعها، حيث
+              تجعل بيتك يتميز عن الآخرين وتضيف إليه أروع اللمسات وأحدث التصاميم
+              العالمية.
+            </p>
+            <!-- الزر الجديد -->
+            <button id="open-about-modal" class="hero-cta-btn">
+              اقرأ المزيد عنا
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES SECTION ================= -->
+    <section id="features" class="py-28 bg-white">
+      <div class="container mx-auto px-4">
+        <!-- العنوان الرئيسي للقسم -->
+        <div class="text-center mb-20" data-aos="fade-up">
+          <h2
+            class="text-4xl md:text-5xl font-['Playfair_Display'] text-[#4A2526] mb-4"
+          >
+            لماذا تختار LUXE؟
+          </h2>
+          <p class="text-lg text-gray-500 max-w-3xl mx-auto">
+            نحن نجمع بين الحرفية، الجودة، والاهتمام بأدق التفاصيل لنقدم لك تجربة
+            فريدة.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+          <!-- بطاقات المميزات (الجانب الأيمن) -->
+          <!-- بطاقات المميزات (الجانب الأيمن) - تم تحديث الأيقونات -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:col-span-2">
+            <!-- الميزة 1: دعم احترافي -->
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="feature-icon">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <h3 class="feature-title">دعم احترافي</h3>
+              <p class="feature-description">
+                يعمل فريقنا بجد لضمان الإجابة على جميع أسئلتك وتلبية احتياجاتك.
+              </p>
+            </div>
+
+            <!-- الميزة 2: فريق بارع -->
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="feature-icon">
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+              <h3 class="feature-title">فريق بارع</h3>
+              <p class="feature-description">
+                من التصميم إلى التركيب، فريقنا مجهز بمجموعة متنوعة من المهارات.
+              </p>
+            </div>
+
+            <!-- الميزة 3: جودة عالية -->
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-icon">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <h3 class="feature-title">جودة عالية للعمل</h3>
+              <p class="feature-description">
+                يتم تنفيذ جميع أعمالنا بأعلى درجة من الكفاءة والاحترافية.
+              </p>
+            </div>
+
+            <!-- الميزة 4: نهج التفصيل -->
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="feature-icon">
+                <i class="fa-solid fa-ruler-combined"></i>
+              </div>
+              <h3 class="feature-title">نهج التفصيل</h3>
+              <p class="feature-description">
+                نحن نركز على كل جانب من جوانب احتياجات عملائنا دون ترك أي شيء.
+              </p>
+            </div>
+          </div>
+
+          <!-- الصورة (الجانب الأيسر) -->
+          <div
+            class="mt-12 lg:mt-0"
+            data-aos="zoom-in-left"
+            data-aos-delay="500"
+          >
+            <div
+              class="relative h-[600px] rounded-2xl overflow-hidden shadow-xl"
+            >
+              <img
+                src="images/photo (2).jpg"
+                alt="ستارة بتصميم أنيق"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#4A2526] via-transparent to-transparent opacity-70"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OUR TEAM SECTION ================= -->
+    <section id="team" class="py-28 bg-[#FBF9F6]">
+      <div class="container mx-auto px-4">
+        <!-- العنوان الرئيسي للقسم -->
+        <div class="text-center mb-20" data-aos="fade-up">
+          <h2
+            class="text-4xl md:text-5xl font-['Playfair_Display'] text-[#4A2526] mb-4"
+          >
+            الفريق الذي يصنع الفرق
+          </h2>
+          <p class="text-lg text-gray-500 max-w-3xl mx-auto">
+            وراء كل ستارة قصة من الشغف والخبرة. تعرف على الأيدي الماهرة التي
+            تحول الأفكار إلى واقع.
+          </p>
+        </div>
+
+        <!-- بطاقات أدوار الفريق -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- بطاقة 1: التصميم والاستشارة -->
+          <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-icon">
+              <i class="fa-solid fa-drafting-compass"></i>
+            </div>
+            <h3 class="team-role">التصميم والإبداع</h3>
+            <p class="team-description">
+              فريق من المصممين المتخصصين في تحويل مساحاتك إلى لوحات فنية عبر
+              أحدث خطوط الموضة العالمية.
+            </p>
+          </div>
+
+          <!-- بطاقة 2: الحرفيون والخياطة -->
+          <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-icon">
+              <i class="fa-solid fa-scroll"></i>
+            </div>
+            <h3 class="team-role">اختيار الأقمشة</h3>
+            <p class="team-description">
+              خبراء الأقمشة لدينا ينتقون بعناية فائقة أجود الخامات التي تجمع بين
+              الجمال، المتانة، والوظيفة.
+            </p>
+          </div>
+
+          <!-- بطاقة 3: التنفيذ والتركيب -->
+          <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-icon">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h3 class="team-role">التركيب والتنفيذ</h3>
+            <p class="team-description">
+              فنيون محترفون يضمنون تركيب الستائر بدقة متناهية واهتمام بأدق
+              التفاصيل لإبراز جمال التصميم.
+            </p>
+          </div>
+
+          <!-- بطاقة 4: خدمة العملاء -->
+          <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-icon">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3 class="team-role">خدمة العملاء</h3>
+            <p class="team-description">
+              فريقناพร้อม لمساعدتك في كل خطوة، من الاستشارة الأولية وحتى خدمة ما
+              بعد البيع لضمان رضاك التام.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SHOWCASE ================= -->
+    <section id="showcase" class="py-28 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-20" data-aos="fade-up">
+          <h2
+            class="text-4xl md:text-5xl font-['Playfair_Display'] text-[#4A2526] mb-4"
+          >
+            مجموعتنا الحصرية
+          </h2>
+          <p class="text-lg text-gray-500 max-w-3xl mx-auto">
+            كل قطعة هي تحفة فنية صُنعت لتدوم.
+          </p>
+        </div>
+
+        <div
+          id="curtains-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12"
+        >
+          <!-- Curtain cards will be injected here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LIVE WORK GALLERY (القسم الجديد) ================= -->
+    <section id="live-work" class="py-28 bg-[#FBF9F6]">
+      <div class="container mx-auto">
+        <!-- العنوان الرئيسي للقسم -->
+        <div class="text-center mb-12 px-4" data-aos="fade-up">
+          <h2
+            class="text-4xl md:text-5xl font-['Playfair_Display'] text-[#4A2526] mb-4"
+          >
+            من قلب مشاريعنا
+          </h2>
+          <p class="text-lg text-gray-500 max-w-3xl mx-auto">
+            شاهد كيف حولنا رؤى عملائنا إلى واقع ملموس. كل صورة تحكي قصة من
+            الإتقان.
+          </p>
+        </div>
+
+        <!-- حاوية التمرير الأفقي -->
+        <div
+          id="gallery-scroll-container"
+          class="horizontal-scroll-wrapper"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="live-gallery">
+            <!-- سيتم إضافة الصور هنا عبر JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-[#4A2526] text-gray-400 py-12">
+      <div class="container mx-auto px-4 text-center">
+        <div class="footer-logo-wrapper mx-auto mb-5">
+          <img src="images/logo.png" alt="شعار LUXE" class="h-20" />
+        </div>
+        <p class="text-xl font-['Playfair_Display'] text-white mb-6">
+          LUXE للستائر والديكور
+        </p>
+        <div class="mb-8">
+          <h3 class="text-2xl text-white font-semibold mb-2">تواصل معنا</h3>
+          <p class="text-gray-400 mb-6">فريقنا متاح دائما لمساعدتك.</p>
+        </div>
+
+        <div class="mb-8">
+          <!-- رقم الهاتف  -->
+          <div class="flex justify-center items-center text-lg mb-6">
+            <a
+              id="footer-call-link"
+              href=""
+              class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                ></path>
+              </svg>
+              <span
+                id="footer-phone-number"
+                class="font-semibold tracking-wider"
+                dir="ltr"
+              ></span>
+            </a>
+          </div>
+          <!-- أيقونات التواصل الاجتماعي -->
+          <div class="flex justify-center items-center gap-6">
+            <a
+              id="footer-whatsapp-link"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  d="M12 2C6.5 2 2 6.2 2 11.6c0 1.9.5 3.7 1.6 5.3L2 22l5.3-1.6c1.6.9 3.4 1.4 5.3 1.4 5.5 0 10-4.2 10-9.6S17.5 2 12 2zm0 17.4c-1.7 0-3.3-.5-4.7-1.4l-.3-.2-3.1.9.9-3-.2-.3c-1-1.4-1.5-3-1.5-4.7C3.1 7.4 7.1 4 12 4s8.9 3.4 8.9 7.6-4 7.8-8.9 7.8zm4.6-5.8c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1s-.7.7-.9.8c-.2.1-.3.1-.5 0-.2-.1-.9-.3-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.2.2-.3.1-.1 0-.2 0-.4s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 2 .8 2.4.9 2.6c.1.2 1.6 2.4 3.9 3.4.5.2.9.4 1.3.5.5.1.9.1 1.3.1.4 0 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.2-.2-.4-.3z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/luxe_strar"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.645-.07-4.85s.012-3.585.07-4.85c.148-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.tiktok.com/@luxe_sta"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  d="M16.5 1c.9 2.4 2.7 4.2 5 5v4.3c-1.9-.1-3.7-.7-5-1.7v7.6c0 3.5-2.8 6.3-6.3 6.3S4 19.7 4 16.2s2.8-6.3 6.3-6.3c.4 0 .8 0 1.2.1v4.1c-.4-.2-.8-.3-1.2-.3-1.4 0-2.4 1.1-2.4 2.4s1.1 2.4 2.4 2.4 2.4-1.1 2.4-2.4V1h3.8z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.snapchat.com/add/lux_star"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-6 h-6"
+              >
+                <path
+                  d="M12 3c-2.8 0-5 2.2-5 5v2.2c0 .7-.4 1.3-1 1.6l-1.4.7c-.4.2-.6.6-.5 1 .1.4.5.7.9.7h.6c.8 0 1.4.6 1.4 1.4 0 2.6 2.2 4.7 5 4.7s5-2.1 5-4.7c0-.8.6-1.4 1.4-1.4h.6c.4 0 .8-.3.9-.7.1-.4-.1-.8-.5-1l-1.4-.7c-.6-.3-1-1-1-1.6V8c0-2.8-2.2-5-5-5z"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:luxestare@gmail.com"
+              class="social-icon"
+              title="تواصل عبر البريد الإلكتروني"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-500">
+          &copy; 2026. كل الحقوق محفوظة. | تم التطوير بواسطة
+          <a
+            href="https://wa.me/967780106064"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="developer-link"
+          >
+            Ahmed Abed AL-Sharabi
+          </a>
+        </p>
+      </div>
+    </footer>
+    <!-- ================= ABOUT US MODAL (النافذة المنبثقة الجديدة) ================= -->
+    <div id="about-modal" class="modal-overlay hidden">
+      <div class="modal-content" data-aos="zoom-in" data-aos-duration="400">
+        <!-- زر الإغلاق -->
+        <button id="close-about-modal" class="modal-close-btn">
+          <i class="fa-solid fa-times"></i>
+        </button>
+
+        <!-- محتوى النافذة -->
+        <div class="p-8 md:p-12">
+          <h2
+            class="text-3xl md:text-4xl font-['Playfair_Display'] text-[#4A2526] mb-6 text-center"
+          >
+            من نحن في LUXE
+          </h2>
+
+          <!-- الوصف التفصيلي -->
+          <p class="text-base text-gray-700 leading-relaxed mb-8">
+            مؤسسة متخصصة في مجال تفصيل وتجهيز أنواع الستائر بأفضل الخامات مع
+            مقومات الجودة والتصميمات العصرية التي تتوافق مع كافة الأذواق. نسعى
+            لتقديم أفضل تجربة لعملائنا بالإضافة إلى توجيهات الخبراء لدينا
+            لمساعدتك للعثور على تصميم مناسب وعرض مئات الأقمشة والنصائح المفيدة
+            حتى يتم اداء الخدمة على أكمل وجه.
+          </p>
+
+          <!-- قسم الرؤية والمهمة -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            <!-- الرؤية -->
+            <div class="vision-mission-card">
+              <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+              <h3 class="card-title">رؤيتنا</h3>
+              <p class="card-text">
+                نحن نقدم خدمة متميزة من خلال العمل الجماعي والمساءلة والابتكار
+                التي تنعكس في جودة نتائجنا.
+              </p>
+            </div>
+            <!-- المهمة -->
+            <div class="vision-mission-card">
+              <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+              <h3 class="card-title">مهمتنا</h3>
+              <p class="card-text">تقديم خدمة متميزة لإرضاء العميل.</p>
+            </div>
+          </div>
+
+          <!-- زر التواصل -->
+          <div class="text-center">
+            <a
+              id="modal-whatsapp-link"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 px-8 py-3 bg-[#25D366] text-white font-bold rounded-full shadow-lg hover:bg-[#1EBE57] transition-all duration-300 transform hover:scale-105"
+            >
+              <i class="fa-brands fa-whatsapp text-2xl"></i>
+              <span>تواصل معنا الآن</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox Gallery (النسخة الاحترافية والنهائية) -->
+    <div id="lightbox" class="lightbox hidden">
+      <!-- زر الإغلاق الاحترافي الجديد -->
+      <button id="closeLightbox" class="close-btn-pro" title="إغلاق">
+        <div class="icon-line line-1"></div>
+        <div class="icon-line line-2"></div>
+      </button>
+
+      <div class="lightbox-main-content">
+        <!-- زر السابق مع أيقونة SVG -->
+        <button id="prevBtn" class="nav-btn prev-btn" title="السابق">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
+
+        <div class="image-container">
+          <img id="lightboxImage" src="" alt="صورة مكبرة للستارة" />
+
+          <!-- العداد وزر الاستفسار الجديد -->
+          <div id="lightbox-info-bar" class="info-bar">
+            <div id="lightbox-counter" class="counter-display"></div>
+            <a
+              id="lightbox-whatsapp-link"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              class="whatsapp-inquire-btn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  d="M12 2C6.5 2 2 6.2 2 11.6c0 1.9.5 3.7 1.6 5.3L2 22l5.3-1.6c1.6.9 3.4 1.4 5.3 1.4 5.5 0 10-4.2 10-9.6S17.5 2 12 2zm4.6-5.8c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1s-.7.7-.9.8c-.2.1-.3.1-.5 0-.2-.1-.9-.3-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.2.2-.3.1-.1 0-.2 0-.4s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 2 .8 2.4.9 2.6c.1.2 1.6 2.4 3.9 3.4.5.2.9.4 1.3.5.5.1.9.1 1.3.1.4 0 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.2-.2-.4-.3z"
+                />
+              </svg>
+              <span>اطلب الان</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- زر التالي مع أيقونة SVG -->
+        <button id="nextBtn" class="nav-btn next-btn" title="التالي">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- حاوية الصور المصغرة -->
+      <div id="thumbnail-container" class="thumbnail-container">
+        <!-- سيتم إضافة الصور المصغرة هنا عبر الجافاسكريبت -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
